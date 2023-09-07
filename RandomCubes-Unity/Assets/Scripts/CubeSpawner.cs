@@ -14,6 +14,8 @@ public GameObject cubePrefabVar;
     // Update is called once per frame
     void Update()
     {
-        Instantiate(cubePrefabVar);
-    }
+        GameObject cube = Instantiate<GameObject>(cubePrefabVar);
+        Material mat = cube.GetComponent<Renderer>().material;
+        mat.color = Random.ColorHSV(0, 1, 0.5f, 1, 0.75f, 1);
+;    }
 }
